@@ -1,22 +1,55 @@
 html {
     font-size: 62.5%; /* 10÷16=62.5% */
 }
-@media only screen and (min-width: 481px){
+@media (max-width: 760px) {
+    /*超小屏幕设备 手机*/
     html {
         font-size: 94%!important; /* 15.04÷16=94% */
     }
+    #windows_btn_wrap{
+        display: none;
+    }
+}
+
+@media (min-width: 760px) and (max-width: 992px) {
+    /*小屏幕设备 平板*/
+    html {
+        font-size: 109%!important; /* 17.44÷16=109% */
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    /*中等屏幕设备 桌面*/
+    html {
+        font-size: 125%!important; /* 20÷16=125% */
+    }
+}
+
+@media (min-width: 1200px) {
+    /*大屏幕设备 桌面*/
+    html {
+        font-size: 125%!important; /* 20÷16=125% */
+    }
+
+}
+/*@media only screen and (min-width: 481px){
+    html {
+        font-size: 94%!important; !* 15.04÷16=94% *!
+    }
+
 }
 @media only screen and (min-width: 561px){
     html {
-        font-size: 109%!important; /* 17.44÷16=109% */
+        font-size: 109%!important; !* 17.44÷16=109% *!
     }
 
 }
 @media only screen and (min-width: 641px){
     html {
-        font-size: 125%!important; /* 20÷16=125% */
+        font-size: 125%!important; !* 20÷16=125% *!
     }
-}
+}*/
+
 body{
     background-color: rgb(24,0,82);
 }
@@ -27,6 +60,7 @@ header{
     left:0;
     top:0;
     position:fixed;
+
 }
 #login_btn{
     float: right;
@@ -41,7 +75,14 @@ footer{
     width:100%;
     left:0;
     bottom:0;
-    position:fixed;>
+    position:fixed;
+    background:rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+#start_btn{
+    display: block;
+    float: left;
+
 }
 .myphoto{
     margin: 2px;
@@ -59,4 +100,31 @@ footer{
 
 .myphoto_wrap span{
     font-size: 2rem;
+}
+.windows_btn{
+   width: 5rem;
+    float: left;
+    margin: 0 2px;
+}
+/*#windows_btn_wrap{
+   !* margin: 0 1rem;*!
+
+    display: inline-block;
+    overflow: hidden;
+}*/
+#windows_inform{
+    color: white;
+    font-size: 1rem;
+    text-align: right;
+    padding-right: 2rem;
+    float: right;
+}
+#windows_time{
+    font-size: 0.5rem;
+    text-align: center;
+    display: inline-block ;
+}
+#windows_time p{
+    margin: 0;
+    padding: 0;
 }
