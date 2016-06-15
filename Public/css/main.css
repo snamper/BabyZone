@@ -32,6 +32,7 @@ html {
     }
 
 }
+
 /*@media only screen and (min-width: 481px){
     html {
         font-size: 94%!important; !* 15.04÷16=94% *!
@@ -67,7 +68,11 @@ header{
 }
 #main_body{
     margin:  4rem 2rem;
-   /* border: 1px solid red;*/
+    position: relative;
+    left: 0;
+    top:0;
+
+    border: 1px solid red;
 }
 footer{
     display: block;
@@ -127,4 +132,19 @@ footer{
 #windows_time p{
     margin: 0;
     padding: 0;
+}
+#windows_wrap{
+    width: 60%;
+    height: 60%;
+    z-index: 2000;
+    position:fixed;
+    left:25%;
+    top:20%;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    overflow: scroll;
+}
+#windows_ico span{
+    margin: 0 1px;
+    float: right;
 }

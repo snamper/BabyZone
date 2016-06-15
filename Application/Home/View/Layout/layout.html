@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--引入js css 文件-->
     <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
     <link rel="stylesheet" href="__PUBLIC__/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="__PUBLIC__/css/main.css">
     <script src="__PUBLIC__/js/jquery-2.1.1.min.js"></script>
     <script src="__PUBLIC__/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
+    <!--缩放-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Title</title>
 </head>
 <body>
+<!--引入也页头-->
 <include file="./Layout/header" />
 <div id="main_body" class="container-fluid">
     {__CONTENT__}
+    <include file="./Layout/window" />
 </div>
+<!--引入页脚-->
 <include file="./Layout/footer" />
+<!--引入窗口弹框-->
+
 </body>
 </html>
