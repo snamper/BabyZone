@@ -1,6 +1,8 @@
+/*html字体大小（rem）*/
 html {
     font-size: 62.5%; /* 10÷16=62.5% */
 }
+/*媒体查询*/
 @media (max-width: 760px) {
     /*超小屏幕设备 手机*/
     html {
@@ -9,6 +11,9 @@ html {
     #windows_btn_wrap{
         display: none;
     }
+    .windows_ico span{
+        margin: 0 3rem;
+    }
 }
 
 @media (min-width: 760px) and (max-width: 992px) {
@@ -16,7 +21,11 @@ html {
     html {
         font-size: 109%!important; /* 17.44÷16=109% */
     }
+    .windows_ico span{
+        margin: 0 4rem;
+    }
 }
+
 
 @media (min-width: 992px) and (max-width: 1200px) {
     /*中等屏幕设备 桌面*/
@@ -50,11 +59,11 @@ html {
         font-size: 125%!important; !* 20÷16=125% *!
     }
 }*/
-
+/*全屏*/
 body{
-    background-color: rgb(24,0,82);
+    background-color: rgb(24,0,82);/*背景*/
 }
-header{
+header{ /*头部菜单*/
     display: block;
     width: 100%;
    /* border: solid 1px red;*/
@@ -63,18 +72,17 @@ header{
     position:fixed;
 
 }
-#login_btn{
+#login_btn{ /*登录按钮*/
     float: right;
 }
-#main_body{
+#main_body{ /*主要显示区域*/
     margin:  4rem 2rem;
     position: relative;
     left: 0;
     top:0;
-
-    border: 1px solid red;
+   /* border: 1px solid red;*/
 }
-footer{
+footer{ /*底部 */
     display: block;
    /* border: 1px red solid;*/
     width:100%;
@@ -84,32 +92,33 @@ footer{
     background:rgba(0,0,0,0.3);
     overflow: hidden;
 }
-#start_btn{
+#start_btn{ /*开始按钮*/
     display: block;
     float: left;
 
 }
-.myphoto{
+.mainIco{ /*主页面图标*/
     margin: 2px;
     background-color: rgb(0,130,153);
 }
-.myphoto>div{
+.mainIco>div{
     height: 5rem;
     line-height: 5rem;
     width: 100%;
     text-align:center
 }
-.myphoto span{
+.mainIco span{
     color: white;
 }
 
-.myphoto_wrap span{
+.mainIco_wrap span{
     font-size: 2rem;
 }
-.windows_btn{
+.windows_btn{ /*底部最小化窗口*/
    width: 5rem;
     float: left;
     margin: 0 2px;
+    display: none;
 }
 /*#windows_btn_wrap{
    !* margin: 0 1rem;*!
@@ -117,14 +126,14 @@ footer{
     display: inline-block;
     overflow: hidden;
 }*/
-#windows_inform{
+#windows_inform{ /*底部通知区域*/
     color: white;
     font-size: 1rem;
     text-align: right;
     padding-right: 2rem;
     float: right;
 }
-#windows_time{
+#windows_time{ /*底部时间日期区域*/
     font-size: 0.5rem;
     text-align: center;
     display: inline-block ;
@@ -133,18 +142,27 @@ footer{
     margin: 0;
     padding: 0;
 }
-#windows_wrap{
-    width: 60%;
-    height: 60%;
+.windows_wrap{ /*弹出窗整体*/
+    width: 100%;
+    height: 90%;
     z-index: 2000;
     position:fixed;
-    left:25%;
-    top:20%;
+    left:0;
+    top:0;
     background-color: rgba(0,0,0,0.5);
     color: white;
     overflow: scroll;
+    display: none;
 }
-#windows_ico span{
-    margin: 0 1px;
+
+.windows_ico{ /*弹出窗头部*/
+    position:fixed;
+    left:0;
+    top:0;
+    width: 100%;
+}
+.windows_ico span { /*弹出窗头部图标*/
+    margin: 0 0.5rem;
     float: right;
+    display: block;
 }
