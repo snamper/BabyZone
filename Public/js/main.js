@@ -16,12 +16,14 @@
             },
             /*主菜单tap事件*/
             mainTap: function () {
+                var that = this;
                 $(".mainIco").on("tap", function () {
                     var winName = $(this).attr('windowsName');//获取与底部窗口对应的name
                     $(".windows_wrap[windowsName=" + winName + "]").show(300);
                     var windows_btn_obj = $(".windows_btn[windowsName=" + winName + "]");//获取对应的底部窗口
                     windows_btn_obj.show(300);//底部窗口显示
                     windows_btn_obj.addClass('btn-warning');//底部窗口背景色变色（按钮增加class）
+                    that.runAjax(winName);
                     return false;
                 });
 
@@ -87,7 +89,6 @@
                     this_window_btn.hide(200);
 
                 });
-
             },
             /*底部消息栏时间*/
             windowsTime: function () {
@@ -101,6 +102,22 @@
               $("#time_h_m").html(_h+':'+_m+":"+_s);
               $("#time_y_m_d").html(_year+"/"+_month+'/'+_day);
               var _t=setInterval(this.windowsTime,1000);
+            },
+            runAjax:function(action){
+                $.ajax({
+                    url: gurl,
+                    type:'get',
+                    data:{
+                        action:action
+                    },
+                    success:function(response){
+
+                    },
+                    fail:function(){
+
+                    }
+                })
+
             }
 
         }
