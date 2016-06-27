@@ -11,6 +11,8 @@
                 this.footWindowsTap();
                 this.windowsIcoTap();
                 this.windowsTime();
+                //this.sortable();
+
 
 
             },
@@ -101,8 +103,16 @@
               var _s=_date.getSeconds();
               $("#time_h_m").html(_h+':'+_m+":"+_s);
               $("#time_y_m_d").html(_year+"/"+_month+'/'+_day);
-              var _t=setInterval(this.windowsTime,1000);
+              var _t=setInterval(this.windowsTime,500);
             },
+            /*网格排序*/
+    /*        sortable:function(){
+                $( "#sortable" ).sortable({ delay: 1000});//延时500毫秒拖拽
+                $( "#sortable" ).disableSelection();
+
+            },*/
+
+            /*ajax提交*/
             runAjax:function(action){
                 $.ajax({
                     url: gurl,

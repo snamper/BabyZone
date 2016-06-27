@@ -165,4 +165,11 @@ footer{ /*底部 */
     margin: 0 0.5rem;
     float: right;
     display: block;
+    cursor: pointer
+}
+.panel-body {
+    position:fixed;
+    left:0;
+    top: 10%;
+    width: 100%;
 }
