@@ -21,7 +21,13 @@ class IndexController extends Controller {
 
     public function manageFile(){
         $new= new \Home\Model\ManageFile\ManageFile();
+        $path=I('path')?I('path'):null;
+        $data=$new->getDir($path);
+        $this->assign('dirTable',$data['dir']);
+        $this->assign('fileTable',$data['file']);
+        $content = $this->fetch("./Layout/temp_file_table" );
+        $this->ajaxReturn($content, 'json');
 
-        echo $new->getDir();
+
     }
 }

@@ -1,0 +1,30 @@
+<table class="table ">
+    <tr>
+        <th>名称</th>
+        <th>修改时间</th>
+        <th>大小</th>
+        <th>类型</th>
+        <th>操作</th>
+    </tr>
+    <foreach name="dirTable" item="item">
+        <tr>
+            <td class="dir_name_wrap"> <span class="glyphicon glyphicon-folder-open" aria-hidden="true" style="color: rgb(255,255,200)">
+            </span>&nbsp&nbsp&nbsp<span class="dir_name">{$item.name}</span>
+            </td>
+            <td>{$item.attr.mtime}</td>
+            <td>{$item.attr.size}</td>
+            <td>文件夹</td>
+            <td>11111</td>
+        </tr>
+    </foreach>
+    <foreach name="fileTable" item="vo">
+        <tr>
+            <td><span class="glyphicon glyphicon-file" aria-hidden="true" style="color: rgb(255,255,200)"></span>&nbsp&nbsp&nbsp{$vo.name}</td>
+            <td>{$vo.attr.mtime}</td>
+            <td>{$vo.attr.size}</td>
+            <td>文件</td>
+            <td>11111</td>
+        </tr>
+    </foreach>
+
+</table>
