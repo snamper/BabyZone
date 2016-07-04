@@ -12,9 +12,10 @@
                 this.footWindowsTap();
                 this.windowsIcoTap();
                 this.windowsTime();
-                this.sortable();
+                //this.sortable(); //待优化
                 $.manageFile.open_crumb();
                 $.manageFile.openDir();
+                $.manageFile.addDiv();
 
             },
 
@@ -98,8 +99,6 @@
                     $(".crumb li:gt(1)").remove();//还原导航
                     // $(".crumb li:last").removeClass('crumb_on');
                     $(".crumb li:last").css('color', 'black');
-
-
                     thisWin.hide(200);
                     this_window_btn.hide(200);
                     return false;
@@ -149,21 +148,30 @@
 
         /*文件管理*/
         manageFile: {
+            /*点击打开文件目录*/
             openDir: function () {
+                var that=this;
                 $(".panel-body").on('tap', '.dir_name_wrap', function () {
                     var dirName = $(this).children(".dir_name").text();//文件名
                     $(".crumb li:last").css('color', '#337ab7');
                     $(".crumb li:last").addClass('crumb_on');
                     $(".crumb").append("<li class='crumb_on'>" + dirName + "</li>");
-                    var path = '';
-                    $(".crumb li:gt(1)").each(function (index, e) {  //面包屑导航第3个开始为二层目录
-                        path += $(this).text() + "\\";
-                    });
+                    var path=that.getPath();
                     var data = {action: 'file', path: path};
                     $.main.runAjax(data)
                 })
             },
-            /*点击文件管理面包屑导航*/
+
+            /*获取文件夹路径*/
+            getPath:function(){
+                var path = '';
+                $(".crumb li:gt(1)").each(function () {  //面包屑导航第3个开始为二层目录
+                    path += $(this).text() + "\\";
+                });
+                return path;
+
+            },
+            /*头部面包屑导航*/
             open_crumb: function () {
                 var that = this;
                 $(".crumb").on('tap', ".crumb_on", function () {
@@ -183,6 +191,14 @@
                     $.main.runAjax(data);
 
                 })
+            },
+            addDiv:function(){
+                //var that=this;
+                $(".panel-body").on('tap','.add_file',function(){
+                    /*添加文件*/
+
+                })
+
             }
 
         }

@@ -107,6 +107,8 @@ footer{ /*底部 */
 .mainIco{ /*主页面图标*/
     margin: 2px;
     background-color: rgb(0,130,153);
+    cursor: pointer
+
 }
 .mainIco>div{
     height: 5rem;
@@ -126,6 +128,7 @@ footer{ /*底部 */
     float: left;
     margin: 0 2px;
     display: none;
+    cursor: pointer
 }
 /*#windows_btn_wrap{
    !* margin: 0 1rem;*!
@@ -144,6 +147,7 @@ footer{ /*底部 */
     font-size: 0.5rem;
     text-align: center;
     display: inline-block ;
+    cursor: pointer
 }
 #windows_time p{
     margin: 0;
@@ -190,4 +194,11 @@ footer{ /*底部 */
     display: inline-block;
     padding-left:3rem ;
     background-color: rgb(240,240,240);
+}
+.tableHead span {
+    color: #66afe9;
+    display:inline-block;
+    margin-left: 1rem;
+    font-size: 1rem;
+    cursor: pointer
 }

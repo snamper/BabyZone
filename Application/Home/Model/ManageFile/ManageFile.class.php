@@ -24,7 +24,7 @@ class ManageFile extends Model{
      * */
     public function getDir($path=null){
         $basePath=$this->__construct();
-        $path= $path ? $basePath.$path."\\" :$this->__construct();
+        $path= $path ? $basePath.$path."\\" :$basePath;
         if (is_dir($path)) {
             $hander=opendir($path);
             while(($item=readdir($hander))!==false ){
